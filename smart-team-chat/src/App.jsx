@@ -1,9 +1,20 @@
-import React from 'react'
+// src/App.jsx
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { ChatProvider } from "./context/ChatContext";
+import ChatList from "./pages/ChatList";
+import ChatWindow from "./pages/ChatWindow";
+import NewChat from "./pages/NewChat";
 
-const App = () => {
+export default function App() {
   return (
-    <div>App</div>
-  )
+    <ChatProvider>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<ChatList />} />
+          <Route path="/chat/:chatId" element={<ChatWindow />} />
+          <Route path="/new" element={<NewChat />} />
+        </Routes>
+      </BrowserRouter>
+    </ChatProvider>
+  );
 }
-
-export default App
