@@ -13,18 +13,18 @@ export default function InputBar({ onSend }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex items-center gap-2 p-3 border-t border-gray-200"
+      className="flex items-center gap-2 p-3 border-t border-gray-300 bg-white shadow-sm"
     >
       <input
         type="text"
         value={text}
         onChange={(e) => setText(e.target.value)}
         placeholder="Type a message..."
-        className="flex-1 border rounded px-3 py-2 text-sm focus:outline-none focus:ring focus:ring-blue-300"
+        className="flex-1 border rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-400"
       />
       <button
         type="submit"
-        className="px-3 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+        className="px-4 py-2 bg-green-500 text-white rounded-full hover:bg-green-600 transition"
       >
         Send
       </button>
