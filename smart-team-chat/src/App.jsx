@@ -4,6 +4,7 @@ import { ChatProvider } from "./context/ChatContext";
 import ChatList from "./pages/ChatList";
 import ChatWindow from "./pages/ChatWindow";
 import NewChat from "./pages/NewChat";
+import "./App.css";
 
 export default function App() {
   return (

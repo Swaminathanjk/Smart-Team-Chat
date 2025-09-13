@@ -3,6 +3,11 @@ import { Link } from "react-router-dom";
 import { formatTime } from "../utils/formatTime";
 
 export default function ChatItem({ chat }) {
+  // console.log(chat);
+  // console.log(formatTime(chat.lastTime));
+  // console.log(chat.lastTime);
+  
+
   return (
     <Link
       to={`/chat/${chat.id}`}

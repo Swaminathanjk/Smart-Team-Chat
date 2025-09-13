@@ -13,7 +13,6 @@ export default function ChatWindow() {
   const [aiSummary, setAiSummary] = useState(null);
   const [aiReply, setAiReply] = useState(null);
 
-  const [copiedSummary, setCopiedSummary] = useState(false);
   const [copiedReply, setCopiedReply] = useState(false);
 
   const scrollRef = useRef();

@@ -12,7 +12,7 @@ export default function MessageBubble({ message }) {
         }`}
       >
         <p>{message.text}</p>
-        <span className="block text-[10px] text-gray-400 mt-1 text-right">
+        <span className="block text-[10px] text-gray-500 mt-1 text-right tracking-wide">
           {new Date(message.time).toLocaleTimeString([], {
             hour: "2-digit",
             minute: "2-digit",
