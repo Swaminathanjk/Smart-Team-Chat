@@ -19,15 +19,28 @@ export default function NewChat() {
 
   const handleCreate = () => {
     if (!name.trim()) return;
+
+    // Create new chat
     const chatId = createChat(name);
 
+    // Add predefined starter message
+    const starterMessage = {
+      id: Date.now().toString(),
+      sender: "System",
+      text: "Welcome! This is the beginning of your conversation.",
+      time: new Date().toISOString(),
+    };
+    addMessage(chatId, starterMessage);
+
+    // Add AI-generated icebreaker if exists
     if (icebreaker) {
-      addMessage(chatId, {
-        id: Date.now().toString(),
+      const icebreakerMessage = {
+        id: (Date.now() + 1).toString(),
         sender: "Me",
         text: icebreaker,
         time: new Date().toISOString(),
-      });
+      };
+      addMessage(chatId, icebreakerMessage);
     }
 
     navigate(`/chat/${chatId}`);
