@@ -21,6 +21,12 @@ export function ChatProvider({ children }) {
 
   const addMessage = (chatId, message) => {
     setChats((prev) =>
+    //   addMessage(chat.id, {
+    //   id: Date.now().toString(),
+    //   sender: "Me",
+    //   text,
+    //   time: new Date().toISOString(),
+    // });
       prev.map((chat) =>
         chat.id === chatId
           ? {
