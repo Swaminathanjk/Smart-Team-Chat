@@ -6,6 +6,9 @@ import ChatItem from "../components/ChatItem";
 
 export default function ChatList() {
   const { chats } = useContext(ChatContext);
+  const sortedChats = [...chats].sort((a, b) => new Date(b.lastTime) - new Date(a.lastTime));
+  // console.log(sortedChats);
+   
 
   return (
     <div className="flex flex-col h-screen bg-gray-100">
@@ -22,7 +25,7 @@ export default function ChatList() {
 
       {/* Chat List */}
       <div className="flex-1 overflow-y-auto">
-        {chats.map((chat) => (
+        {sortedChats.map((chat) => (
           <ChatItem key={chat.id} chat={chat} />
         ))}
       </div>
