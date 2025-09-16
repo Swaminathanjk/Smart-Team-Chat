@@ -9,7 +9,7 @@ export function ChatProvider({ children }) {
 
   const createChat = (name) => {
     const newChat = {
-      id: Date.now().toString(),
+      id: name + Date.now().toString(),
       name,
       lastMessage: "Chat created",
       lastTime: new Date().toISOString(),
