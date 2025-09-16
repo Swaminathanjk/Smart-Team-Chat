@@ -21,7 +21,7 @@ export default function NewChat() {
     if (!name.trim()) return;
 
     // Create new chat
-    const chatId = createChat(name);
+    const chatId = createChat(name); 
 
     // Add predefined starter message
     const starterMessage = {
