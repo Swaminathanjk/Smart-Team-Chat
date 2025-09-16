@@ -7,7 +7,7 @@ import ChatItem from "../components/ChatItem";
 export default function ChatList() {
   const { chats } = useContext(ChatContext);
   const sortedChats = [...chats].sort((a, b) => new Date(b.lastTime) - new Date(a.lastTime));
-  // console.log(sortedChats);
+  console.log(sortedChats);
    
 
   return (

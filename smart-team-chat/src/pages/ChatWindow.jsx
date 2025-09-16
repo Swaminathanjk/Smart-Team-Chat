@@ -32,14 +32,38 @@ export default function ChatWindow() {
     );
   }
 
+  // Predefined auto-replies
+  const autoReplies = [
+    "Got it 👍",
+    "Interesting, tell me more!",
+    "Let’s follow up on that soon.",
+    "Haha, that’s funny 😂",
+    "Sounds like a plan!",
+    "I’ll check and get back to you.",
+    "Thanks for sharing!",
+  ];
+
   const handleSend = (text) => {
     if (!text.trim()) return;
-    addMessage(chat.id, {
+    const newMessage = {
       id: Date.now().toString(),
       sender: "Me",
       text,
       time: new Date().toISOString(),
-    });
+    };
+    addMessage(chat.id, newMessage);
+
+    // Simulate bot auto-reply after delay
+    setTimeout(() => {
+      const randomReply =
+        autoReplies[Math.floor(Math.random() * autoReplies.length)];
+      addMessage(chat.id, {
+        id: (Date.now() + 1).toString(),
+        sender: chat.name, // Or "Bot"
+        text: randomReply,
+        time: new Date().toISOString(),
+      });
+    }, 1000); // 1s delay
   };
 
   const copyToClipboard = (text, setCopied) => {

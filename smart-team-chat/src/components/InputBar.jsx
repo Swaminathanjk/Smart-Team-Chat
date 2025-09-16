@@ -10,6 +10,12 @@ export default function InputBar({ onSend }) {
     setText("");
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleSubmit(e);
+    }
+  };
+
   return (
     <form
       onSubmit={handleSubmit}
@@ -18,6 +24,7 @@ export default function InputBar({ onSend }) {
       <input
         type="text"
         value={text}
+        onKeyDown={handleKeyPress}
         onChange={(e) => setText(e.target.value)}
         placeholder="Type a message..."
         className="flex-1 border rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-green-400"
